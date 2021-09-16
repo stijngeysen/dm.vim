@@ -34,10 +34,10 @@ syn keyword dmKeyword read\-only nextgroup=dmKeyword,dmType skipwhite skipempty
 syn keyword dmKeyword status nextgroup=dmKeyword,dmType skipwhite skipempty
 
 " Handlers
-syn region dmCommit matchgroup=dmMatch start="commit with \"" end="\""
-syn region dmRead matchgroup=dmMatch start="read with \"" end="\""
-syn region dmValidate matchgroup=dmMatch start="validate with \"" end="\""
-syn region dmDefault matchgroup=dmMatch start="default with \"" end="\""
+syn region dmCommit matchgroup=dmMatch start="\(instance \)\=commit with \"" end="\""
+syn region dmRead matchgroup=dmMatch start="\(instance \)\=read with \"" end="\""
+syn region dmValidate matchgroup=dmMatch start="\(instance \)\=validate with \"" end="\""
+syn region dmDefault matchgroup=dmMatch start="\(instance \)\=default with \"" end="\""
 
 hi def link dmCommit            dmHandler
 hi def link dmRead              dmHandler
