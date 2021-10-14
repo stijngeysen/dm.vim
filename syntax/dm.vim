@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     DM datamodel Grammar File
 " Author:       Stijn Geysen <stijn.geysen@luminex.be>
-" Date:         September 16, 2021
+" Date:         Oktober 15, 2021
 " File Types:   dm
 " Version:      1
 " Notes:
@@ -38,11 +38,13 @@ syn region dmCommit matchgroup=dmMatch start="\(instance \)\=commit with \"" end
 syn region dmRead matchgroup=dmMatch start="\(instance \)\=read with \"" end="\""
 syn region dmValidate matchgroup=dmMatch start="\(instance \)\=validate with \"" end="\""
 syn region dmDefault matchgroup=dmMatch start="\(instance \)\=default with \"" end="\""
+syn region dmExecute matchgroup=dmMatch start="\(instance \)\=execute with \"" end="\""
 
 hi def link dmCommit            dmHandler
 hi def link dmRead              dmHandler
 hi def link dmValidate          dmHandler
 hi def link dmDefault           dmHandler
+hi def link dmExecute           dmHandler
 
 " Field names
 syn match dmObjectName "\w*\ {"he=e-2
@@ -54,7 +56,7 @@ syn region dmMultiObjectName matchgroup=dmObjectName start="\w*\[" end="\]" cont
 syn region dmMultiObjectKey matchgroup=dmMatch start="key\s*=\s*\"" end="\"\]" contained
 
 " Types
-syn keyword dmType object String bool u64 i64 u32 i32 u16 i16 u8 i8 nextgroup=dmObjectName skipwhite skipempty
+syn keyword dmType rpc object String bool u64 i64 u32 i32 u16 i16 u8 i8 nextgroup=dmObjectName skipwhite skipempty
 
 " Now we can link them with predefined groups.
 hi def link dmTitle             SpecialComment
